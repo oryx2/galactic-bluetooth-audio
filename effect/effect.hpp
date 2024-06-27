@@ -11,8 +11,8 @@ class Effect {
         Effect(Display& display, FIX_FFT& fft) : 
             display(display), 
             fft(fft) {};
-        virtual void init(uint32_t sample_frequency);
-        virtual void update(int16_t *buffer16, size_t sample_count);
+        virtual void init(uint32_t sample_frequency)=0;
+        virtual void update(int16_t *buffer16, size_t sample_count)=0;
 };
 
 class RainbowFFT : public Effect {
